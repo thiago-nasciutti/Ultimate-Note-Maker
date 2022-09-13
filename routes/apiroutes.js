@@ -19,8 +19,6 @@ router.post("/notes", (req, res) => {
 
 //DELETE Note
 router.delete("/notes/:id", (req, res) => {
-    console.log(db);
-    console.log(req.params.id)
     db.splice(req.params.id-1,1);
     fs.writeFile("./db/db.json", JSON.stringify(db), (err) => {
        return err;
