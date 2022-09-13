@@ -19,12 +19,12 @@ router.post("/notes", (req, res) => {
 
 //DELETE Note
 router.delete("/notes/:id", (req, res) => {
-    db.splice(req.params.id-1,1);
-    fs.writeFile("./db/db.json", JSON.stringify(db), (err) => {
-       return err;
-   });
-    res.json(db);
-   });
+ db.splice(req.params.id - 1, 1);
+ fs.writeFile("./db/db.json", JSON.stringify(db), (err) => {
+  return err;
+ });
+ res.json(db);
+});
 
 //Export Module
 module.exports = router;
